@@ -8,13 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authLogin, logout } from "../../../redux/silce/customer/authSilce";
 import { toast } from "react-toastify";
-import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { getTotal } from "../../../redux/silce/customer/cartSlice";
 import { fetchAllCategory } from "../../../redux/silce/customer/categorySlice";
 import SearchInput from "../SearchInput";
 import { IoBagHandle } from "react-icons/io5";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -57,7 +54,7 @@ const Header = () => {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "150px", marginLeft: "120px" }}
+            style={{ maxHeight: "150px", marginLeft: "150px" }}
             navbarScroll
           >
             <Nav.Link onClick={() => navigate("/")} active={true}>
@@ -113,7 +110,7 @@ const Header = () => {
           <Nav.Link style={{ marginRight: "10px" }}>
             <IoBagHandle
               onClick={() => navigatePage("/cart")}
-              style={{ fontSize: "35px", color: "#ca1515" }}
+              style={{ fontSize: "35px", color: "#d3bb75" }}
             />
             <span
               style={{
@@ -121,25 +118,16 @@ const Header = () => {
                 width: "20px",
                 height: "20px",
                 borderRadius: "50%",
-                backgroundColor: "#f8f8f8",
+                backgroundColor: "#d3bb75",
                 textAlign: "center",
                 lineHeight: "19px",
-                color: "#ca1515",
+                color: "#0d0e09",
               }}
             >
               {cartTotalQuantity}
             </span>
           </Nav.Link>
           <SearchInput />
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="text"
-              placeholder="Nhập tên sản phẩm..."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Tìm</Button>
-          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
